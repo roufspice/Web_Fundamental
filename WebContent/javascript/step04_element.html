@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        window.onload = function(){
+
+            document.getElementById("addBtn").addEventListener("click", function(){
+                let msg = document.getElementById("inputMsg").value;
+                if(msg){ //falsy value;
+                const ul = document.getElementById("ullist");
+                const li = document.createElement("li");
+                li.innerText = msg;
+                ul.append(li);
+                document.getElementById("inputMsg").value = '';
+                document.getElementById("inputMsg").focus();
+
+                } else{
+                    document.getElementById("inputMsg").focus();
+
+                }
+            });
+
+
+        
+            
+
+        }
+    
+    </script>
+</head>
+<body>
+    <input type="text" name ="msg" id ="inputMsg">
+    <button id = "addBtn">추가</button>
+    <ul id ="ullist">
+        <li>하나</li>
+        <li>두울</li>
+        <li>세엣</li>
+
+    </ul>
+</body>
+</html>

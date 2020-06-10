@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <script>
+        //생성자함수
+        const Student = function(name, korean, math){
+            this.name = name;
+            this.korean = korean;
+            this.math = math;
+            this.getSum = function(){
+                return this.korean + this.math;
+
+            }
+        }
+        const s2 = {
+            "name" : '신짱구',
+            "korean" : 90,
+            "math" : 90,
+            "getSum" : function(){
+                return this.korean + this.math;
+            }
+        }
+
+        const s1 = new Student('신짱구', 90,100);
+        console.log(s1.name, s1.getSum());
+        console.log(s1.getSum());
+        console.log(typeof s1);
+
+        console.log(typeof s2);
+        console.log(s2);
+        console.log(typeof s1);
+        console.log(s1);
+
+        //PROTOTYPE => Javascript에서 기존의 Object를 확장하는 기능
+        Student.prototype.getAvg = function(){
+            return (this.korean + this.math)/2;
+        }
+        console.log(s1.getAvg());
+
+        
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
