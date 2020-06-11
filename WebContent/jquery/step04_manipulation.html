@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <title>TRAVERSING</title>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			//$('p').prepend('<strong>HI </strong>');	//prepend();
+			// $('p').append('<strong>HI </strong>');		//append();
+			//$('<strong>HI </strong>').prependTo('p'); //'p'라는 요소에다가 붙여넣어라. prependTo();
+			$('<strong>HI </strong>').appendTo('p');
+
+			$('p').after('<strong>HI </strong>');
+			$('p').before('<strong>HI </strong>');
+			$('p').html('<strong>가나다라마바사아자차카타파하</strong>'); //.html()
+
+			let msg = $('p').text();
+			let msg = $('p').html();
+			console.log(msg); 
+
+			$('p').empty();
+		
+
+
+
+			
+			
+
+
+
+
+		});
+     
+    </script>
+	<style>
+		div {
+			border: 1px solid blue;
+
+		}
+		p{
+			background-color:darksalmon;
+
+		}
+	</style>
+</head>
+<body>
+	<p>jQuery</p>
+	
+	
+</body>
+</html>
