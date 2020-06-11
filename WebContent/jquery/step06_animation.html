@@ -1,0 +1,45 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <title>ANIMATION</title>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				//$('#target').fadeOut();
+				//$('#target').show('slow');  ***** 개발자가 많이 쓰는 코드
+				$('#target').slideUp('slow');
+			});
+			$('#btn2').click(function(){
+				//$('#target').fadeIn();
+				//$('#target').hide('slow');	*****개발자가 많이쓰는 코드
+				$('#target').slideDown('slow');
+			});
+
+
+
+		});
+
+
+    </script>
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<input type="button" id ="btn1" value ="사라지기">
+	<input type="button" id = "btn2" value = "나타나기">
+	<div id="target">
+
+	</div>
+
+	
+</body>
+</html>
