@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax jquery</title>
+    <script src="../jquery/jquery-3.5.1.js"></script> <!--jquery 라이브러리 이용-->
+    <script>
+            //jsonp(json with padding)이 되는 open API일경우, test라는 함수를 묶어서 편법으로 가능하다.
+        function test(obj){
+            //JSON.stringify(object): object를 JSON 형식의 문자열로 변환
+            $('#sel').append(JSON.stringify(obj));
+        }
+        
+        
+        </script>
+   
+</head>
+<body>
+    <button id="btn">가져오기</button>
+    <div name="" id="sel">
+        
+        
+        
+    </div>
+    
+    
+</body>
+<script type="text/javascript" src="http://www.acornacademy.co.kr/blockchain/naver_json.jsp?call=test"></script> 
+</html>

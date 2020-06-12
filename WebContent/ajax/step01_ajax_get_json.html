@@ -31,6 +31,7 @@
                 //ajax로 요청한 데이터를 받는 함수
                 if(xhr.readyState == 4 && xhr.status == 200){
                     console.log(xhr.responseText); //xhr.responseText : 가져오는데이터(타입은 String객체임)!
+                   
                     const obj = JSON.parse(xhr.responseText); //문자열(가져온데이터)를 자바스크립트 객체로 변환
                     const listArray = obj.cafelist;
 
