@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax jquery</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        var xhr = new XMLHttpRequest();
+        
+        if(xhr == null){
+            alert("Error create xhr object");
+        }
+
+        $(function(){
+            $('#btn').click(function(){
+                $.ajax({
+                    url: 'proxy.jsp?url=http://www.acornacademy.co.kr/blockchain/naver_json.jsp', //여기다가 오픈API주소넣기!
+                    type:'GET',
+                    dataType : 'json',
+                    error: function(){
+                        alert('error');
+                    },
+                    success: function(obj){
+                        // console.log(obj);
+                        // console.log(typeof obj);
+                        $('#sel').append(JSON.stringify(obj));
+                       
+                    }
+
+                });
+
+             
+
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn">가져오기</button>
+    <div name="" id="sel">
+
+
+
+    </div>
+    
+
+</body>
+</html>
