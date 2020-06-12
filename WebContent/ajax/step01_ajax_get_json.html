@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get</title>
+    <script src="../jquery/jquery-3.5.1.js"></script>
+    <script>
+        var xhr;
+        if(window.XMLHttpRequest){
+            //모질라, 사파리, 크롬, 익스플로러7,...
+            xhr = new XMLHttpRequest();
+
+        }else {
+            //IE6 이하
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+
+        }
+        if(xhr == null){
+            alert("Error create xhr object");
+
+        }
+
+        $(function(){
+            $('#btn').click(function(){
+                let url = 'json_data.json';
+                xhr.open('GET',url,true);
+                //ajax로 데이터를 요청
+                xhr.send(null);
+                xhr.onreadystatechange = function(){
+                //ajax로 요청한 데이터를 받는 함수
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText); //xhr.responseText : 가져오는데이터(타입은 String객체임)!
+                    const obj = JSON.parse(xhr.responseText); //문자열(가져온데이터)를 자바스크립트 객체로 변환
+                    const listArray = obj.cafelist;
+
+                    let message = "<ul>";
+
+
+                    for(let i = 0; i<listArray.length; i++){
+                        const listObj = listArray[i];
+                        let name = listObj.name;
+                        let clubId = listObj.clubid;
+                        message += "<li>"+name+"("+clubId+")</li>";
+
+
+                    }
+                    message += "</ul>";
+                    $('#sel').append(message);
+
+                }
+
+                }
+
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn">가져오기</button>
+    <div name="" id="sel">
+
+
+
+    </div>
+    
+
+</body>
+</html>
